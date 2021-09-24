@@ -1,4 +1,4 @@
-//https://raw.githubusercontent.com/LuizRaro98/atividade/main/alocdinamica.cpp
+//https://github.com/LuizRaro98/atividade3/blob/main/alocdinamica.cpp
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,7 +36,7 @@ int main (void)
             char nomecomp [30];
             int contador = 0;
             int montante = 10;
-            float aux = 0;
+            PESSOA aux;
 			PESSOA *pPessoa=NULL;
             pPessoa = (PESSOA *) calloc(montante, montante * sizeof(PESSOA));
             setlocale(LC_ALL, "Portuguese");
@@ -52,11 +52,11 @@ int main (void)
 	        printf("\n[ 1 ] Cadastrar novo cliente");
             printf("\n[ 2 ] Remover cliente");
             printf("\n[ 3 ] Atualizar gastos do cliente");
-            printf("\n[ 4 ] Virar o mÍs (Zerar compras)");
+            printf("\n[ 4 ] Virar o m√™s (Zerar compras)");
             printf("\n[ 5 ] Listar clientes (por melhor comprador)");
             printf("\n[ 6 ] Ver gastos de cliente");
             printf("\n[ 7 ] Sair\n");
-            printf("\nOpÁ„o desejada: ");
+            printf("\nOp√ß√£o desejada: ");
             scanf("%d%*c", &opcao);
             system ("cls");
 
@@ -105,7 +105,7 @@ int main (void)
             	retorno = strcmp (nomecomp, nome);
         		if (retorno == 0) {
             		{
-            		    printf("Montante total a ser atualizado (OBS: n„o ser· somado com o que j· tem.): ");
+            		    printf("Montante total a ser atualizado (OBS: n√£o ser√° somado com o que j√° tem.): ");
 
             			scanf("%f%*c", &pPessoa[i].gasto);
 					}
@@ -130,7 +130,7 @@ int main (void)
 
                      if(pPessoa[i].gasto < pPessoa[j].gasto) {
 
-                     	 aux = pPessoa[i].gasto;                pPessoa[i].gasto = pPessoa[j].gasto;                pPessoa[j].gasto = aux;
+                     	aux = pPessoa[i]; pPessoa[i] = pPessoa[j];   pPessoa[j] = aux;
 					 }
 
 				}  }
